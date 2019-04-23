@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    function updatePageContent() {
+        var xhr = typeof XMLHttpRequest != 'undefined' ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+        xhr.open('get', 'news.html');
+        xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) { 
+            document.getElementsByClassName('page_content')[0].innerHTML = xhr.responseText;
+            } 
+        }       
+        xhr.send();
+        }
+</script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>Hebden Bridge Gazette</h1>
+        <nav>
+            <ul class = "links">
+                <li><a href = "#">Home</a></li>
+                <li><a href = "#" onclick="updatePageContent()">News</a></li>
+                <li><a href = "#">Weather</a></li>
+                <li><a href = "#">Classifieds</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class = "page_content">
+        <article>
+                <h2>Hebden Bridge is the 4th funkiest town in the world! </h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dapibus, erat vitae lobortis rhoncus, nunc ex congue orci, sed volutpat turpis ex id dui. Nulla orci ligula, tempor id elementum eu, cursus hendrerit neque. Cras vel mollis velit. Etiam rutrum mauris et risus pulvinar, id placerat lorem porttitor. Pellentesque porttitor urna sit amet turpis dapibus tincidunt. Aenean sed sapien vel purus pretium hendrerit ut in nisl. Nunc varius, orci at tincidunt tristique, diam mauris vestibulum nunc, at sollicitudin dolor metus nec felis. Quisque purus augue, rutrum vitae tincidunt in, pharetra sed mi.</p>
+                <p>Etiam volutpat lectus sit amet ante auctor semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sapien tincidunt, semper dolor sit amet, consequat nisi. Donec a pharetra lorem. Nullam consequat tortor erat, id placerat nibh porttitor a. Suspendisse ut leo in enim aliquet malesuada quis vel ligula. Donec consequat, tellus vel ultricies sodales, leo velit condimentum quam, a placerat lacus turpis a eros. Integer dolor mi, posuere ut feugiat vel, elementum ac magna. Nulla facilisi. Mauris consectetur, nunc eget scelerisque bibendum, nisl diam porta orci, a venenatis orci nunc sed dui. Donec scelerisque felis arcu, eu aliquet ipsum condimentum vitae. Vivamus maximus sapien turpis, id hendrerit diam dapibus in. Nunc suscipit porttitor nisi, nec feugiat lacus. Praesent ante odio, porttitor id placerat id, tincidunt volutpat turpis. Vestibulum bibendum tortor at erat efficitur, aliquet convallis dolor dapibus.</p>
+                <figure>
+                    <div class = "image">
+                        <img id = "main_image" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Platform_2%2C_Hebden_Bridge_railway_station_%28geograph_4500324%29.jpg" class = "fluid-image">
+                    </div>
+                    <figcaption>Hebden Bridge Railway Station</figcaption>
+                </figure>
+                <p>Praesent tempus, ante consequat pulvinar convallis, purus enim scelerisque libero, ut ultricies ipsum erat at lorem. Donec mattis purus et elit tristique molestie. Nunc sodales lorem quis ante maximus tristique. Phasellus mollis neque dolor, a vehicula arcu iaculis quis. Nulla auctor scelerisque sapien, nec dignissim nibh imperdiet sit amet. Integer mi erat, feugiat vel lobortis eget, gravida et magna. Nulla blandit sagittis quam, id pulvinar justo tempor sit amet. Etiam consequat gravida mauris et finibus. Suspendisse fringilla nibh sed mattis vestibulum. Nullam faucibus ante id semper ornare.</p>
+                <p>Etiam sit amet dictum sem. Praesent faucibus, nulla vitae consectetur rutrum, magna enim mollis purus, sit amet consequat lacus ipsum sit amet risus. Suspendisse convallis eros sem, vitae porttitor neque lacinia at. Nunc tortor quam, ultrices et ipsum eget, cursus ultricies purus. Quisque sem erat, vestibulum eu commodo a, blandit et nibh. Praesent tincidunt laoreet nisi ac imperdiet. Nam egestas mauris eu nisi faucibus, non blandit lorem consequat. Vestibulum consectetur magna dui, non lacinia dolor rhoncus ac.</p>
+        </article>
+        <aside>
+            <h3>Author</h3>
+            <div class = "image">
+                <img src="https://gdurl.com/yIAK" class = "fluid-image">
+            </div>
+            <h4>Jack Pearsall</h4>
+            <p>usce aliquam, lorem sed cursus iaculis, arcu leo efficitur mi, in faucibus ex magna eget leo. Ut porta convallis nisl et aliquet. Nam a ex imperdiet, mollis enim a, interdum massa. Aenean fringilla purus id luctus scelerisque. Maecenas eu dolor at sem maximus ullamcorper.</p>
+        </aside>
+    </main>
+    <footer>© Hebden Bridge Gazette </footer>
+</body>
+</html>
